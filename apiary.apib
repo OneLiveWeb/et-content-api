@@ -1,0 +1,1459 @@
+FORMAT: 1A
+HOST: https://www.exacttargetapis.com
+
+# Content
+This API will allow to interact with Content inside of the ExactTarget Marketing Cloud.
+
+# Group Assets
+Notes related resources of the **Assets API**
+
+## Asset [/assets/{id}]
+A single Asset object.
+
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Asset to perform action with. Has example value.
+
++ Model (application/json)
+    
+    + Headers
+    
+            X-Mashery-Message-ID: 44b97afc-43cd-479d-b98d-1784635b1312
+            X-Mashery-Responder: prod-j-worker-us-east-1c-31.mashery.com
+
+    + Body
+
+            {
+                "id": 1,
+                "assetType": "image",
+                "classification": "file",
+                "version": 1,
+                "name": "Hero Image",
+                "description": "Image of a man wearing a jacket",
+                "owner": 1093028,
+                "createdDate": "2014-01-30T11:18:31-06:00",
+                "createdBy": 1097912,
+                "modifiedDate": "2014-01-31T10:13:53-06:00",
+                "modifiedBy": 1093028,
+                "catalogId": 1084683,
+                "eid": 1084683,
+                "mid": 1084683,
+                "category": {
+                    "id": 328,
+                    "name": "promo",
+                    "tree": "/agency/promo"
+                },
+                "tags": [
+                    "hero",
+                    "man",
+                    "jacket",
+                    "columbia"
+                ],
+                "status": "Active",
+                "publishDate": "2014-02-15T00:00:00-06:00",
+                "expirationDate": "2014-04-15T00:00:00-06:00",
+                "locked": false,
+                "archived": false,
+                "favorite": true,
+                "channels": [
+                    "email",
+                    "site",
+                    "socialPages"
+                ],
+                "campaigns": [
+                    61
+                ],
+                "businessUnits": [
+                    1038710,
+                    1039012,
+                    1039113,
+                    1039039
+                ],
+                "publishedLocations": [
+                    {
+                        "name": "akamai",
+                        "href": "http://image.exacttarget.com/lib/fec3167874670174/m/1/heroImage.jpg"
+                    },
+                    {
+                        "name": "amazonS3",
+                        "href": "http://s3.amazonaws.com/fec3167874670174/heroImage.jpg"
+                    }
+                ],
+                "customFields": {
+                    "SKU": "1047191"
+                    "Brand": "Columbia"
+                },
+                "fileName": "heroImage.jpg",
+                "sourcePath": "//etincrep03/1084683/heroImage.jpg",
+                "lensType": "",
+                "focalLength": "",
+                "cameraModel": "",
+                "iso": "",
+                "colorSpace": "",
+                "colorType": "",
+                "shutterSpeed": "",
+                "aperture": "",
+                "fileFormat": "JPG",
+                "fileSize": "7140",
+                "width": 199,
+                "height": 254
+            }
+
+### Retrieve an Asset [GET]
++ Response 200 (application/json)
+    
+    [Asset][]
+
+### Update an Asset [PUT]
++ Request (application/json)
+
+    + Body
+
+            {
+                "id": 1,
+                "catalogId": 1084683,
+                "eid": 1084683,
+                "mid": 1084683,
+                "name": "Hero Image",
+                "description": "Image of a man wearing a jacket",
+                "category": {
+                    "id": 328
+                },
+                "status": "Active",
+                "publishDate": "2014-02-15T00:00:00-06:00",
+                "expirationDate": "2014-04-15T00:00:00-06:00",
+                "locked": false,
+                "archived": false,
+                "favorite": true,
+                "campaigns": [
+                    61
+                ],
+                "customFields": {
+                    "SKU": "1047191"
+                    "Brand": "Columbia"
+                }
+            }
+
++ Response 200 (application/json)
+
+    [Asset][]
+
+### Delete an Asset [DELETE]
++ Response 204
+
+## Assets Collection [/assets]
+A collection of Asset objects.
+
++ Model (application/json)
+    
+    + Headers
+    
+            X-Mashery-Message-ID: 44b97afc-43cd-479d-b98d-1784635b1312
+            X-Mashery-Responder: prod-j-worker-us-east-1c-31.mashery.com
+
+    + Body
+    
+            { 
+                "count": 3,
+                "pageSize": 50,
+                "page": 1,
+                "items": [
+                    {
+                        "id": 1,
+                        "assetType": "image",
+                        "classification": "file",
+                        "version": 1,
+                        "name": "Hero Image",
+                        "description": "Image of a man wearing a jacket",
+                        "owner": 1093028,
+                        "createdDate": "2014-01-30T11:18:31-06:00",
+                        "createdBy": 1097912,
+                        "modifiedDate": "2014-01-31T10:13:53-06:00",
+                        "modifiedBy": 1093028,
+                        "catalogId": 1084683,
+                        "eid": 1084683,
+                        "mid": 1084683,
+                        "category": {
+                            "id": 328,
+                            "name": "promo",
+                            "tree": "/agency/promo"
+                        },
+                        "tags": [
+                            "hero",
+                            "man",
+                            "jacket",
+                            "columbia"
+                        ],
+                        "status": "Active",
+                        "publishDate": "2014-02-15T00:00:00-06:00",
+                        "expirationDate": "2014-04-15T00:00:00-06:00",
+                        "locked": false,
+                        "archived": false,
+                        "favorite": true,
+                        "channels": [
+                            "email",
+                            "site",
+                            "socialPages"
+                        ],
+                        "campaigns": [
+                            61
+                        ],
+                        "businessUnits": [
+                            1038710,
+                            1039012,
+                            1039113,
+                            1039039
+                        ],
+                        "publishedLocations": [
+                            {
+                                "name": "akamai",
+                                "href": "http://image.exacttarget.com/lib/fec3167874670174/m/1/heroImage.jpg"
+                            },
+                            {
+                                "name": "amazonS3",
+                                "href": "http://s3.amazonaws.com/fec3167874670174/heroImage.jpg"
+                            }
+                        ],
+                        "fileName": "heroImage.jpg",
+                        "sourcePath": "//etincrep03/1084683/heroImage.jpg",
+                        "lensType": "",
+                        "focalLength": "",
+                        "cameraModel": "",
+                        "iso": "",
+                        "colorSpace": "",
+                        "colorType": "",
+                        "shutterSpeed": "",
+                        "aperture": "",
+                        "fileFormat": "JPG",
+                        "fileSize": "7140",
+                        "width": 199,
+                        "height": 254
+                    },
+                    {
+                        "id": 3,
+                        "assetType": "imagePlusText",
+                        "classification": "content",
+                        "version": 3,
+                        "name": "Example Image & Text Content",
+                        "description": "Hero image for our NYE mobile page",
+                        "owner": 1093028,
+                        "createdDate": "2014-01-30T11:18:31-06:00",
+                        "createdBy": 1097912,
+                        "modifiedDate": "2014-01-31T10:13:53-06:00",
+                        "modifiedBy": 1093028,
+                        "catalogId": 1084683,
+                        "eid": 1084683,
+                        "mid": 1039012,
+                        "category": {
+                            "id": 319,
+                            "name": "example",
+                            "tree": "/something/another/example"
+                        },
+                        "tags": [
+                            "mobile",
+                            "new_years",
+                            "blue"
+                        ],
+                        "status": "Active",
+                        "publishDate": "2014-02-15T00:00:00-06:00",
+                        "expirationDate": "2014-04-15T00:00:00-06:00",
+                        "locked": true,
+                        "archived": false,
+                        "favorite": false,
+                        "channels": [
+                            "email",
+                            "site",
+                            "mms"
+                        ],
+                        "campaigns": [
+                            38,
+                            57,
+                            61
+                        ],
+                        "businessUnits": [
+                            1038710,
+                            1038711,
+                            1039012
+                        ],
+                        "customFields": {
+                            "SKU": "1047191"
+                            "Brand": "Columbia"
+                        },
+                        "contentFields": {
+                            "body": "Mister wayne, if you don't want to tell me exactly what you're doing, when i'm asked, i don't have to lie. but don't think of me as an idiot. cities fall but they are rebuilt. heroes die but they are remembered. let me tell you something my friend. hope is a dangerous thing. hope can drive a man insane. the man likes to play chess; let's get him some rocks. multiply your anger by about a hundred, kate, that's how much he thinks he loves you. cities fall but they are rebuilt. heroes die but they are remembered. i did the same thing to gandhi, he didn't eat for three weeks. well, what is it today? more spelunking? i once heard a wise man say there are no perfect men. only perfect intentions. you measure yourself by the people who measure themselves by you. i now issue a new commandment: thou shalt do the dance.",
+                            "link": 2,
+                            "image": 1
+                        }
+                    },
+                    {
+                        "id": 8,
+                        "assetType": "article",
+                        "classification": "content",
+                        "version": 2,
+                        "name": "Example Blog Post",
+                        "description": "Article about a squirrel who waterskis",
+                        "owner": 1093028,
+                        "createdDate": "2014-01-30T11:18:31-06:00",
+                        "createdBy": 1097912,
+                        "modifiedDate": "2014-01-31T10:13:53-06:00",
+                        "modifiedBy": 1093028,
+                        "catalogId": 1084683,
+                        "eid": 1084683,
+                        "mid": 1084683,
+                        "category": {
+                            "id": 317,
+                            "name": "another",
+                            "tree": "/something/another"
+                        },
+                        "tags": [
+                            "squirrel",
+                            "waterski"
+                        ],
+                        "status": "Active",
+                        "publishDate": "2014-02-15T00:00:00-06:00",
+                        "expirationDate": "2014-04-15T00:00:00-06:00",
+                        "locked": true,
+                        "archived": false,
+                        "favorite": false,
+                        "channels": [
+                            "email",
+                            "site",
+                            "mms"
+                        ],
+                        "campaigns": [
+                            38,
+                            82
+                        ],
+                        "businessUnits": [
+                            1039012
+                        ],
+                        "customFields": {
+                            "PublisherId": 118
+                        },
+                        "contentFields": {
+                            "author": "Adam Gillaspie",
+                            "body": "<p>we're going for a ride on the information super highway. we're going for a ride on the information super highway. your entrance was good, his was better. here she comes to wreck the day. we got no food we got no money and our pets heads are falling off! haaaaaaarry. i just heard about evans new position,good luck to you evan backstabber, i mean baxter. we got no food we got no money and our pets heads are falling off! haaaaaaarry. good morning, oh in case i don't see you, good afternoon, good evening and goodnight. it's because i'm green isn't it! we got no food we got no money and our pets heads are falling off! haaaaaaarry. i just heard about evans new position,good luck to you evan backstabber.</p><p> brain freeze. excuse me, i'd like to ass you a few questions. kinda hot in these rhinos. here she comes to wreck the day. good morning, oh in case i don't see you, good afternoon, good evening and goodnight. kinda hot in these rhinos. excuse me, i'd like to ass you a few questions. your entrance was good, his was better. your entrance was good, his was better. it's because i'm green isn't it! look at that, it's exactly three seconds before i honk your nose and pull your underwear over your head. look ma i'm road kill.</p>",
+                            "summary": "We're going for a ride on the information super highway. we're going for a ride on the information super highway. your entrance was good, his was better. here she comes to wreck the day. we got no food we got no money and our pets heads are falling off! haaaaaaarry....",
+                            "title": "A Talented Squirrel",
+                            "link": 4,
+                            "image": 6,
+                            "characterCount": 1239,
+                            "wordCount": 231
+                        }
+                    }
+                ]
+            }
+
+### Create an Asset [POST]
++ Request (application/json)
+
+    + Body
+
+            {
+                "catalogId": 1084683,
+                "eid": 1084683,
+                "mid": 1084683,
+                "assetType": "article",
+                "name": "Example Blog Post",
+                "description": "Article about a squirrel who waterskis",
+                "category": {
+                    "id": 317
+                },
+                "status": "Active",
+                "customFields": {
+                    "PublisherId": 118
+                },
+                "contentFields": {
+                    "author": "Adam Gillaspie",
+                    "body": "<p>we're going for a ride on the information super highway. we're going for a ride on the information super highway. your entrance was good, his was better. here she comes to wreck the day. we got no food we got no money and our pets heads are falling off! haaaaaaarry. i just heard about evans new position,good luck to you evan backstabber, i mean baxter. we got no food we got no money and our pets heads are falling off! haaaaaaarry. good morning, oh in case i don't see you, good afternoon, good evening and goodnight. it's because i'm green isn't it! we got no food we got no money and our pets heads are falling off! haaaaaaarry. i just heard about evans new position,good luck to you evan backstabber.</p><p> brain freeze. excuse me, i'd like to ass you a few questions. kinda hot in these rhinos. here she comes to wreck the day. good morning, oh in case i don't see you, good afternoon, good evening and goodnight. kinda hot in these rhinos. excuse me, i'd like to ass you a few questions. your entrance was good, his was better. your entrance was good, his was better. it's because i'm green isn't it! look at that, it's exactly three seconds before i honk your nose and pull your underwear over your head. look ma i'm road kill.</p>",
+                    "summary": "We're going for a ride on the information super highway. we're going for a ride on the information super highway. your entrance was good, his was better. here she comes to wreck the day. we got no food we got no money and our pets heads are falling off! haaaaaaarry....",
+                    "title": "A Talented Squirrel",
+                    "link": 4,
+                    "image": 6
+                }
+            }
+
++ Response 201 (application/json)
+
+        {
+            "id": 8,
+            "assetType": "article",
+            "classification": "content",
+            "version": 2,
+            "name": "Example Blog Post",
+            "description": "Article about a squirrel who waterskis",
+            "owner": 1093028,
+            "createdDate": "2014-01-30T11:18:31-06:00",
+            "createdBy": 1097912,
+            "modifiedDate": "2014-01-31T10:13:53-06:00",
+            "modifiedBy": 1093028,
+            "catalogId": 1084683,
+            "eid": 1084683,
+            "mid": 1084683,
+            "category": {
+                "id": 317,
+                "name": "another",
+                "tree": "/something/another"
+            },
+            "tags": [
+                "squirrel",
+                "waterski"
+            ],
+            "status": "Active",
+            "publishDate": "2014-02-15T00:00:00-06:00",
+            "expirationDate": "2014-04-15T00:00:00-06:00",
+            "locked": true,
+            "archived": false,
+            "favorite": false,
+            "channels": [
+                "email",
+                "site",
+                "mms"
+            ],
+            "campaigns": [
+                38,
+                82
+            ],
+            "businessUnits": [
+                1039012
+            ],
+            "customFields": {
+                "PublisherId": 118
+            },
+            "contentFields": {
+                "author": "Adam Gillaspie",
+                "body": "<p>we're going for a ride on the information super highway. we're going for a ride on the information super highway. your entrance was good, his was better. here she comes to wreck the day. we got no food we got no money and our pets heads are falling off! haaaaaaarry. i just heard about evans new position,good luck to you evan backstabber, i mean baxter. we got no food we got no money and our pets heads are falling off! haaaaaaarry. good morning, oh in case i don't see you, good afternoon, good evening and goodnight. it's because i'm green isn't it! we got no food we got no money and our pets heads are falling off! haaaaaaarry. i just heard about evans new position,good luck to you evan backstabber.</p><p> brain freeze. excuse me, i'd like to ass you a few questions. kinda hot in these rhinos. here she comes to wreck the day. good morning, oh in case i don't see you, good afternoon, good evening and goodnight. kinda hot in these rhinos. excuse me, i'd like to ass you a few questions. your entrance was good, his was better. your entrance was good, his was better. it's because i'm green isn't it! look at that, it's exactly three seconds before i honk your nose and pull your underwear over your head. look ma i'm road kill.</p>",
+                "summary": "We're going for a ride on the information super highway. we're going for a ride on the information super highway. your entrance was good, his was better. here she comes to wreck the day. we got no food we got no money and our pets heads are falling off! haaaaaaarry....",
+                "title": "A Talented Squirrel",
+                "link": 4,
+                "image": 6,
+                "characterCount": 1239,
+                "wordCount": 231
+            }
+        }
+
+### Retrieve All Assets [GET]
++ Parameters
+    + pageSize (optional, number, `100`) ... Numeric size of the Assets collection to return on each page. Default is `50`.
+    + page (optional, number, `3`) ... Numeric index of the page to return from the total result set. Default is `1`.
+
++ Response 200 (application/json)
+    
+    [Assets Collection][]
+
+
+# Group Asset Types
+Notes related resources of the **Asset Types API**
+
+## Asset Type [/assetTypes/{id}]
+A single Asset Type object.
+
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Asset Type to perform action with. Has example value.
+
+### Retrieve an Asset Type [GET]
++ Response 200 (application/json)    
+    
+        {
+            "id": 10,
+            "name": "article",
+            "classification": "content",
+            "extensions": [],
+            "fields": [
+                {
+                    "id": 41,
+                    "name": "author",
+                    "label": "Author",
+                    "dataType": "Text",
+                    "renderType": "Text",
+                    "length": 100,
+                    "custom": false,
+                    "searchable": true
+                },
+                {
+                    "id": 46,
+                    "name": "body",
+                    "label": "Body",
+                    "dataType": "Text",
+                    "renderType": "HTML",
+                    "length": 0,
+                    "custom": false,
+                    "searchable": true
+                },
+                {
+                    "id": 47,
+                    "name": "summary",
+                    "label": "Summary",
+                    "dataType": "Text",
+                    "renderType": "HTML",
+                    "length": 500,
+                    "custom": false,
+                    "searchable": true
+                },
+                {
+                    "id": 51,
+                    "name": "title",
+                    "label": "Title",
+                    "dataType": "Text",
+                    "renderType": "Text",
+                    "length": 120,
+                    "custom": false,
+                    "searchable": true
+                },
+                {
+                    "id": 60,
+                    "name": "link",
+                    "label": "Link",
+                    "dataType": "List",
+                    "renderType": "Asset",
+                    "length": 0,
+                    "custom": false,
+                    "searchable": false
+                },
+                {
+                    "id": 61,
+                    "name": "image",
+                    "label": "Image",
+                    "dataType": "List",
+                    "renderType": "Asset",
+                    "length": 0,
+                    "custom": false,
+                    "searchable": false
+                }
+            ]
+        }
+
+## Asset Types Collection [/assetTypes]
+A collection of Asset Type objects.
+
++ Model (application/json)
+
+    + Headers
+    
+            X-Mashery-Message-ID: 44b97afc-43cd-479d-b98d-1784635b1312
+            X-Mashery-Responder: prod-j-worker-us-east-1c-31.mashery.com
+
+    + Body
+    
+            { 
+                "count": 3,
+                "pageSize": 50,
+                "page": 1,
+                "items": [
+                    {
+                        "id": 1,
+                        "name": "image",
+                        "classification": "file",
+                        "extensions": [
+                            "bmp",
+                            "dng",
+                            "gif",
+                            "ico",
+                            "jpg",
+                            "jpeg",
+                            "png",
+                            "tif",
+                            "tiff"
+                        ],
+                        "protocols": [],
+                        "fields": [
+                            {
+                                "id": 35,
+                                "name": "altText",
+                                "label": "Alt Text",
+                                "dataType": "Text",
+                                "renderType": "Text",
+                                "length": 150,
+                                "custom": false,
+                                "searchable": true
+                            }
+                        ]
+                    },
+                    {
+                        "id": 10,
+                        "name": "article",
+                        "classification": "content",
+                        "extensions": [],
+                        "protocols": [],
+                        "fields": [
+                            {
+                                "id": 41,
+                                "name": "author",
+                                "label": "Author",
+                                "dataType": "Text",
+                                "renderType": "Text",
+                                "length": 100,
+                                "custom": false,
+                                "searchable": true
+                            },
+                            {
+                                "id": 46,
+                                "name": "body",
+                                "label": "Body",
+                                "dataType": "Text",
+                                "renderType": "HTML",
+                                "length": 0,
+                                "custom": false,
+                                "searchable": true
+                            },
+                            {
+                                "id": 47,
+                                "name": "summary",
+                                "label": "Summary",
+                                "dataType": "Text",
+                                "renderType": "HTML",
+                                "length": 500,
+                                "custom": false,
+                                "searchable": true
+                            },
+                            {
+                                "id": 51,
+                                "name": "title",
+                                "label": "Title",
+                                "dataType": "Text",
+                                "renderType": "Text",
+                                "length": 120,
+                                "custom": false,
+                                "searchable": true
+                            },
+                            {
+                                "id": 60,
+                                "name": "link",
+                                "label": "Link",
+                                "dataType": "List",
+                                "renderType": "Asset",
+                                "length": 0,
+                                "custom": false,
+                                "searchable": false
+                            },
+                            {
+                                "id": 61,
+                                "name": "image",
+                                "label": "Image",
+                                "dataType": "List",
+                                "renderType": "Asset",
+                                "length": 0,
+                                "custom": false,
+                                "searchable": false
+                            }
+                        ]
+                    },
+                    {
+                        "id": 40,
+                        "name": "webUrl",
+                        "classification": "link",
+                        "extensions": [],
+                        "protocols": [
+                            "http",
+                            "https",
+                            "ftp",
+                            "file"
+                        ],
+                        "fields": [
+                            {
+                                "id": 79,
+                                "name": "url",
+                                "label": "URL",
+                                "dataType": "Text",
+                                "renderType": "Text",
+                                "length": 0,
+                                "custom": false,
+                                "searchable": true
+                            },
+                            {
+                                "id": 82,
+                                "name": "title",
+                                "label": "Title",
+                                "dataType": "Text",
+                                "renderType": "Text",
+                                "length": 100,
+                                "custom": false,
+                                "searchable": true
+                            },
+                            {
+                                "id": 84,
+                                "name": "target",
+                                "label": "Target",
+                                "dataType": "Text",
+                                "renderType": "Text",
+                                "length": 100,
+                                "custom": false,
+                                "searchable": false
+                            },
+                            {
+                                "id": 90,
+                                "name": "linkText",
+                                "label": "Link Text",
+                                "dataType": "Text",
+                                "renderType": "Text",
+                                "length": 500,
+                                "custom": false,
+                                "searchable": true
+                            }
+                        ]
+                    }
+                ]
+            }
+
+### Retrieve All Asset Types [GET]
++ Parameters
+    + pageSize (optional, number, `50`) ... Numeric size of the Asset Types collection to return on each page. Default is `50`.
+    + page (optional, number, `2`) ... Numeric index of the page to return from the total result set. Default is `1`.
+    
++ Response 200 (application/json)
+    
+    [Asset Types Collection][]
+
+
+# Group Asset Type Fields
+Notes related resources of the **Asset Type Fields API**
+
+## Field [/fields/{id}]
+A single Field object.
+
++ Parameters
+    + id (number, `1`) ... The id of the Field.
+
++ Model (application/json)
+    
+    + Headers
+    
+            X-Mashery-Message-ID: 44b97afc-43cd-479d-b98d-1784635b1312
+            X-Mashery-Responder: prod-j-worker-us-east-1c-31.mashery.com
+
+    + Body
+    
+            {
+                "id": 41,
+                "name": "author",
+                "label": "Author",
+                "dataType": "Text",
+                "renderType": "Text",
+                "length": 100,
+                "custom": false,
+                "searchable": true
+            }
+
+### Retrieve a Field [GET]
++ Response 200 (application/json)    
+    
+    [Field][]
+
+### Update a Field [PUT]
++ Request
+    
+    [Field][]
+
++ Response 200 (application/json)    
+    
+    [Field][]
+
+### Delete a Field [DELETE]
++ Response 204    
+
+## Fields Collection [/fields]
+A collection of Field objects.
+
++ Model (application/json)
+    
+    + Headers
+    
+            X-Mashery-Message-ID: 44b97afc-43cd-479d-b98d-1784635b1312
+            X-Mashery-Responder: prod-j-worker-us-east-1c-31.mashery.com
+
+    + Body
+    
+            { 
+                "count": 3,
+                "pageSize": 50,
+                "page": 1,
+                "items": [
+                    {
+                        "id": 47,
+                        "name": "summary",
+                        "label": "Summary",
+                        "dataType": "Text",
+                        "renderType": "HTML",
+                        "length": 500,
+                        "custom": false,
+                        "searchable": true
+                    },
+                    {
+                        "id": 51,
+                        "name": "title",
+                        "label": "Title",
+                        "dataType": "Text",
+                        "renderType": "Text",
+                        "length": 120,
+                        "custom": false,
+                        "searchable": true
+                    },
+                    {
+                        "id": 60,
+                        "name": "link",
+                        "label": "Link",
+                        "dataType": "List",
+                        "renderType": "Asset",
+                        "length": 0,
+                        "custom": false,
+                        "searchable": false
+                    }
+                ]
+            }
+
+### Create a Field [POST]
++ Request (application/json)
+    
+    + Body
+        
+            {
+                "name": "example",
+                "label": "Example",
+                "dataType": "Text",
+                "renderType": "Text",
+                "length": 100,
+                "custom": true,
+                "searchable": true
+            }
+
++ Response 200 (application/json)    
+    
+    + Headers
+    
+            X-Mashery-Message-ID: 44b97afc-43cd-479d-b98d-1784635b1312
+            X-Mashery-Responder: prod-j-worker-us-east-1c-31.mashery.com
+
+    + Body
+    
+            {
+                "id": 121,
+                "name": "example",
+                "label": "Example",
+                "dataType": "Text",
+                "renderType": "Text",
+                "length": 100,
+                "custom": true,
+                "searchable": true
+            }
+
+### Retrieve All Fields [GET]
++ Parameters
+    + pageSize (optional, number, `100`) ... Numeric size of the Fields collection to return on each page. Default is `50`.
+    + page (optional, number, `3`) ... Numeric index of the page to return from the total result set. Default is `1`.
+
++ Response 200 (application/json) 
+
+    [Fields Collection][]
+
+
+# Group Tags
+Notes related resources of the **Tags API**
+
+## Tag [/tags/{id}]
+A single Tag object.
+
++ Parameters
+    + id (number, `1`) ... The id of the Tag.
+
++ Model (application/json)
+    
+    + Headers
+    
+            X-Mashery-Message-ID: 44b97afc-43cd-479d-b98d-1784635b1312
+            X-Mashery-Responder: prod-j-worker-us-east-1c-31.mashery.com
+
+    + Body
+    
+            {
+                "id": 12,
+                "name": "holiday",
+                "description": "Anything Holiday-related",
+                "createdDate": "2014-01-30T11:18:31-06:00",
+                "createdBy": 1097912,
+                "modifiedDate": "2014-01-31T10:13:53-06:00",
+                "modifiedBy": 1093028
+            }
+
+### Retrieve a Tag [GET]
++ Response 200 (application/json)    
+    
+    [Tag][]
+
+### Update a Tag [PUT]
++ Request
+    
+    [Tag][]
+
++ Response 200 (application/json)    
+    
+    [Tag][]
+
+### Delete a Tag [DELETE]
++ Response 204    
+
+## Tags Collection [/tags]
+A collection of Tag objects.
+
++ Model (application/json)
+    
+    + Headers
+    
+            X-Mashery-Message-ID: 44b97afc-43cd-479d-b98d-1784635b1312
+            X-Mashery-Responder: prod-j-worker-us-east-1c-31.mashery.com
+
+    + Body
+    
+            { 
+                "count": 2,
+                "pageSize": 50,
+                "page": 1,
+                "items": [
+                    {
+                        "id": 12,
+                        "name": "holiday",
+                        "description": "Anything Holiday-related",
+                        "createdDate": "2014-01-30T11:18:31-06:00",
+                        "createdBy": 1097912,
+                        "modifiedDate": "2014-01-31T10:13:53-06:00",
+                        "modifiedBy": 1093028
+                    },
+                    {
+                        "id": 18,
+                        "name": "blue",
+                        "description": "Contains the color blue",
+                        "createdDate": "2014-01-30T11:18:31-06:00",
+                        "createdBy": 1097912,
+                        "modifiedDate": "2014-01-31T10:13:53-06:00",
+                        "modifiedBy": 1093028
+                    }
+                ]
+            }
+
+### Create a Tag [POST]
++ Request (application/json)
+    
+    + Body
+        
+            {
+                "name": "holiday",
+                "description": "Anything Holiday-related"
+            }
+
++ Response 200 (application/json)    
+    
+    [Tag][]
+
+### Retrieve All Tags [GET]
++ Parameters
+    + pageSize (optional, number, `100`) ... Numeric size of the Tags collection to return on each page. Default is `50`.
+    + page (optional, number, `3`) ... Numeric index of the page to return from the total result set. Default is `1`.
+
++ Response 200 (application/json) 
+
+    [Tags Collection][]
+
+## Tag Association [/assets/{id}/tags/{tagId}]
+A single Tag object on a given Asset.
+
++ Parameters
+    + id (number, `1`) ... The id of the Asset.
+    + tagId (number, `12`) ... The id of the Tag.
+
+### Associate a Tag with an Asset [POST]
++ Response 200 (application/json)    
+    
+    [Tag][]
+
+### Dissociate a Tag from an Asset [DELETE]
++ Response 200 (application/json)    
+    
+    [Tag][]
+
+## Tags Collection Association [/assets/{id}/tags]
+A collection of Tag objects on a given Asset.
+
++ Parameters
+    + id (number, `1`) ... The id of the Asset.
+
+### Retrieve All Tags Associated with an Asset [GET]
++ Response 200 (application/json)    
+    
+    [Tags Collection][]
+
+### Associate a Collection of Tags with an Asset [POST]
++ Request (application/json)
+    
+    + Body
+        
+            {
+                "tags": [
+                    {
+                        "id": 12,
+                        "name": "holiday",
+                        "description": "Anything Holiday-related"
+                    },
+                    {
+                        "id": 18,
+                        "name": "blue",
+                        "description": "Contains the color blue"
+                    }
+                ]
+            }
+
++ Response 200 (application/json)    
+    
+    [Tags Collection][]
+
+## Tagged Assets [/assets/tags/{id}]
+A collection of Assets associated with a given Tag.
+
++ Parameters
+    + id (number, `1`) ... The id of the Tag.
+
+### Retrieve All Assets Associated with a Tag [GET]
++ Response 200 (application/json)    
+    
+    [Assets Collection][]
+
+
+# Group Favorites
+Notes related resources of the **Favorites API**
+
+## Favorite [/assets/{id}/favorite]
+An Asset can be marked or unmarked as Favorite.
+
++ Parameters
+    + id (number, `1`) ... The id of the Asset.
+
+### Favorite an Asset [POST]
++ Response 200 (application/json)    
+    
+    [Asset][]
+
+### Un-Favorite an Asset [DELETE]
++ Response 200 (application/json)    
+    
+    [Asset][]
+
+## Favorite Assets [/assets/favorite]
+A collection of Favorite Assets.
+
+### Retrieve All Favorite Assets [GET]
++ Response 200 (application/json)    
+    
+    [Assets Collection][]
+
+
+# Group Upload
+Notes related resources of the **Upload API**
+
+## Upload [/assets/upload]
+An Asset created from a file upload.
+
+### Create an Asset via File Upload [POST]
++ Request (multipart/form-data)
+
+    + Headers
+    
+            Content-Length: 1072
+
+    + Body
+
+            --AaB03x
+            Content-Disposition: form-data; name="categoryId"
+        
+            319
+            --AaB03x
+            Content-Disposition: form-data; name="files"; filename="exampleImage.jpg"
+            Content-Type: image/jpeg
+        
+            ... contents of exampleImage.jpg ...
+            --AaB03x--
+
++ Response 201 (application/json)
+
+    [Asset][]
+
+## Zip Upload [/assets/upload/zip]
+Multiple Assets created from a zip archive upload.
+
+### Create Assets via Zip Upload [POST]
++ Request (multipart/form-data)
+
+    + Headers
+    
+            Content-Length: 2104
+
+    + Body
+
+            --AaB03x
+            Content-Disposition: form-data; name="categoryId"
+        
+            319
+            --AaB03x
+            Content-Disposition: form-data; name="files"; filename="exampleArchive.zip"
+            Content-Type: application/octet-stream
+        
+            ... contents of exampleArchive.zip ...
+            --AaB03x--
+
++ Response 201 (application/json)
+
+    [Assets Collection][]
+
+## URL Upload [/assets/upload/url]
+An Asset created from downloading an externally-hosted file.
+
+### Create an Asset from a URL [POST]
++ Request (application/json)
+
+    + Body
+
+            {
+                "url": "http://example.com/image.jpg"
+            }
+
++ Response 201 (application/json)
+
+    [Asset][]
+
+
+# Group Publish
+Notes related resources of the **Publish API**
+
+## Publish [/assets/{id}/publish]
+An Asset must be published to Akamai before it can be used in a message.
+
++ Parameters
+    + id (number, `1`) ... The id of the Asset.
+
++ Model (application/json)
+    
+    + Headers
+    
+            X-Mashery-Message-ID: 44b97afc-43cd-479d-b98d-1784635b1312
+            X-Mashery-Responder: prod-j-worker-us-east-1c-31.mashery.com
+
+    + Body
+    
+            {
+                "id": 401,
+                "createdDate": "2014-01-27T10:13:53-06:00",
+                "createdBy": 1093028,
+                "status": "In Progress",
+                "startDate": "2014-01-28T08:42:13-06:00"
+            }
+
+### Retrieve the Publish Status [GET]
+Check if an Asset has been successfully published to Akamai, or if it is still in progress.
+
++ Response 200
+    
+    + Body
+
+            {
+                "id": 401,
+                "createdDate": "2014-01-27T10:13:53-06:00",
+                "createdBy": 1093028,
+                "status": "In Progress",
+                "startDate": "2014-01-28T08:42:13-06:00"
+            }
+
+### Publish an Asset [POST]
+Publish a given Asset to Akamai.
+
++ Response 200
+    
+    [Asset][]
+
+### Unpublish an Asset [DELETE]
+Remove a given Asset from Akamai.
+
++ Response 200
+        
+    [Asset][]
+
+## Published Assets [/assets/published]
+A collection of Published Assets.
+
+### Retrieve All Published Assets [GET]
++ Response 200 (application/json)    
+    
+    [Assets Collection][]
+
+
+# Group History
+Notes related resources of the **History API**
+
+## History Collection [/assets/{id}/history]
+History of events on an Asset.
+
++ Parameters
+    + id (number, `1`) ... The id of the Asset.
+
++ Model (application/json)
+    
+    + Headers
+    
+            X-Mashery-Message-ID: 44b97afc-43cd-479d-b98d-1784635b1312
+            X-Mashery-Responder: prod-j-worker-us-east-1c-31.mashery.com
+
+    + Body
+    
+            { 
+                "count": 2,
+                "pageSize": 50,
+                "page": 1,
+                "items": [
+                    {
+                        "id": 503,
+                        "createdBy": 1093028,
+                        "createdDate": "2014-01-28T08:42:13-06:00"
+                    },
+                    {
+                        "id": 511,
+                        "createdBy": 1094771,
+                        "createdDate": "2014-01-29T14:11:52-06:00"
+                    }
+                ]
+            }
+
+### Retrieve the History of an Asset (Unfinished) [GET]
++ Response 200 (application/json)    
+    
+    [History Collection][]
+
+
+# Group Search
+Notes related resources of the **Search API**
+
+## Search [/search]
+A new Search query that returns a collection of Assets.
+
++ Model (application/json)
+    
+    + Headers
+    
+            X-Mashery-Message-ID: 44b97afc-43cd-479d-b98d-1784635b1312
+            X-Mashery-Responder: prod-j-worker-us-east-1c-31.mashery.com
+
+    + Body
+    
+            { 
+                "id": 39,
+                "name": "Jacket Hero Images",
+                "owner": 1097912,
+                "createdDate": "2014-01-31T10:13:53-06:00",
+                "createdBy": 1097912,
+                "modifiedDate": "2014-01-31T10:13:53-06:00",
+                "modifiedBy": 1097912,
+                "grouping": "and",
+                "query": [
+                    {
+                        "field": "name",
+                        "operator": "startsWith",
+                        "grouping": "or",
+                        "values": [
+                            "hero",
+                            "man"
+                        ]
+                    },
+                    {
+                        "field": "longdescription",
+                        "operator": "contains",
+                        "value": "jacket",
+                        "grouping": "or",
+                        "values": [
+                            "jacket"
+                        ]
+                    },
+                    {
+                        "field": "tags",
+                        "operator": "contains",
+                        "value": "jacket",
+                        "grouping": "or",
+                        "values": [
+                            "jacket"
+                        ]
+                    }
+                ]
+            }
+
+### Retrieve a Search Result Set [GET]
++ Request
+
+    [Search][]
+
++ Response 200 (application/json)    
+    
+    [Assets Collection][]
+
+### Save a New Search [POST]
++ Request (application/json)
+
+    + Body
+
+            { 
+                "name": "Jacket Hero Images",
+                "grouping": "and",
+                "query": [
+                    {
+                        "field": "name",
+                        "operator": "startsWith",
+                        "grouping": "or",
+                        "values": [
+                            "hero",
+                            "man"
+                        ]
+                    },
+                    {
+                        "field": "longdescription",
+                        "operator": "contains",
+                        "grouping": "or",
+                        "values": [
+                            "jacket"
+                        ]
+                    },
+                    {
+                        "field": "tags",
+                        "operator": "contains",
+                        "grouping": "or",
+                        "values": [
+                            "jacket"
+                        ]
+                    }
+                ]
+            }
+
++ Response 200 (application/json)    
+    
+    [Search][]
+
+## Saved Search [/search/{id}]
+A saved Search query that returns a collection of Assets.
+
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the saved Search to execute. Has example value.
+
+### Retrieve a Search Result Set [GET]
++ Response 200 (application/json)
+    
+    [Assets Collection][]
+
+### Update a Saved Search [PUT]
++ Response 200 (application/json)
+    
+    [Assets Collection][]
+
+### Delete a Saved Search [DELETE]
++ Response 204
+
+
+# Group Categories
+Notes related resources of the **Categories API**
+
+## Category [/categories/{id}]
+A single Category object.
+
++ Parameters
+    + id (number, `1`) ... The id of the Category.
+
++ Model (application/json)
+    
+    + Headers
+    
+            X-Mashery-Message-ID: 44b97afc-43cd-479d-b98d-1784635b1312
+            X-Mashery-Responder: prod-j-worker-us-east-1c-31.mashery.com
+
+    + Body
+    
+            {
+                "id": 20,
+                "parentId": 6,
+                "name": "Advertisements",
+                "description": "Assets for use in Partner Ads",
+                "createdDate": "2014-01-30T11:18:31-06:00",
+                "createdBy": 1097912,
+                "modifiedDate": "2014-01-31T10:13:53-06:00",
+                "modifiedBy": 1093028
+            }
+
+### Retrieve a Category [GET]
++ Response 200 (application/json)    
+    
+    [Category][]
+
+### Update a Category [PUT]
++ Request
+    
+    [Category][]
+
++ Response 200 (application/json)    
+    
+    [Category][]
+
+### Delete a Category [DELETE]
++ Response 204    
+
+## Categories Collection [/categories]
+A collection of Category objects.
+
++ Model (application/json)
+    
+    + Headers
+    
+            X-Mashery-Message-ID: 44b97afc-43cd-479d-b98d-1784635b1312
+            X-Mashery-Responder: prod-j-worker-us-east-1c-31.mashery.com
+
+    + Body
+    
+            { 
+                "count": 2,
+                "pageSize": 50,
+                "page": 1,
+                "items": [
+                    {
+                        "id": 20,
+                        "parentId": 6,
+                        "name": "Advertisements",
+                        "description": "Assets for use in Partner Ads",
+                        "createdDate": "2014-01-30T11:18:31-06:00",
+                        "createdBy": 1097912,
+                        "modifiedDate": "2014-01-31T10:13:53-06:00",
+                        "modifiedBy": 1093028
+                    },
+                    {
+                        "id": 28,
+                        "parentId": 12,
+                        "name": "Social",
+                        "description": "Facebook and Twitter Media",
+                        "createdDate": "2014-01-30T11:18:31-06:00",
+                        "createdBy": 1097912,
+                        "modifiedDate": "2014-01-31T10:13:53-06:00",
+                        "modifiedBy": 1093028
+                    }
+                ]
+            }
+
+### Create a Category [POST]
++ Request (application/json)
+    
+    + Body
+        
+            {
+                "parentId": 6,
+                "name": "Advertisements",
+                "description": "Assets for use in Partner Ads"
+            }
+
++ Response 200 (application/json)    
+    
+    [Category][]
+
+### Retrieve All Categories [GET]
++ Parameters
+    + pageSize (optional, number, `100`) ... Numeric size of the Categories collection to return on each page. Default is `50`.
+    + page (optional, number, `3`) ... Numeric index of the page to return from the total result set. Default is `1`.
+
++ Response 200 (application/json) 
+
+    [Categories Collection][]

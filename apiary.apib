@@ -27,20 +27,39 @@ A single Asset object.
                 "assetType": "image",
                 "classification": "file",
                 "version": 1,
+                "key": "heroImage",
                 "name": "Hero Image",
                 "description": "Image of a man wearing a jacket",
-                "owner": 1093028,
+                "owner": {
+                    "Id": 1093028,
+                    "Email": "agillaspie@exacttarget.com",
+                    "Name": "Adam Gillaspie",
+                    "UserId": "cm-agillaspie"
+                },
                 "createdDate": "2014-01-30T11:18:31-06:00",
-                "createdBy": 1097912,
+                "createdBy": {
+                    "Id": 1093028,
+                    "Email": "agillaspie@exacttarget.com",
+                    "Name": "Adam Gillaspie",
+                    "UserId": "cm-agillaspie"
+                },
                 "modifiedDate": "2014-01-31T10:13:53-06:00",
-                "modifiedBy": 1093028,
-                "catalogId": 1084683,
+                "modifiedBy": {
+                    "Id": 1097912,
+                    "Email": "contentmanagement@exacttarget.com",
+                    "Name": "Content Management User",
+                    "UserId": "cm-contentuser"
+                },
                 "enterpriseId": 1084683,
                 "memberId": 1084683,
+                "status": "Active",
+                "locked": false,
+                "archived": false,
+                "favorite": true,
                 "category": {
                     "id": 328,
                     "name": "promo",
-                    "tree": "/agency/promo"
+                    "path": "/agency/promo"
                 },
                 "tags": [
                     "hero",
@@ -48,54 +67,80 @@ A single Asset object.
                     "jacket",
                     "columbia"
                 ],
-                "status": "Active",
-                "publishDate": "2014-02-15T00:00:00-06:00",
-                "expirationDate": "2014-04-15T00:00:00-06:00",
-                "locked": false,
-                "archived": false,
-                "favorite": true,
-                "channels": [
-                    "email",
-                    "site",
-                    "socialPages"
-                ],
-                "campaigns": [
-                    61
-                ],
-                "businessUnits": [
-                    1038710,
-                    1039012,
-                    1039113,
-                    1039039
-                ],
-                "publishedLocations": [
-                    {
-                        "name": "akamai",
-                        "href": "http://image.exacttarget.com/lib/fec3167874670174/m/1/heroImage.jpg"
+                "channels": {
+                    "email": true,
+                    "mms": true,
+                    "print": false,
+                    "push": true,
+                    "site": true,
+                    "sms": false,
+                    "social": false,
+                    "web": false
+                },
+                "variations": {
+                    "original": {
+                        "url": "http://image.exacttarget.com/media/originals/heroImage/heroImage.jpg",
+                        "width": 734,
+                        "height": 546
                     },
-                    {
-                        "name": "amazonS3",
-                        "href": "http://s3.amazonaws.com/fec3167874670174/heroImage.jpg"
+                    "image_large": {
+                        "url": "http://image.exacttarget.com/media/generated/heroImage/heroImage1024x768.jpg",
+                        "width": 1024,
+                        "height": 768
+                    },
+                    "image_medium": {
+                        "url": "http://image.exacttarget.com/media/generated/heroImage/heroImage550x350.jpg",
+                        "width": 550,
+                        "height": 350
+                    },
+                    "image_thumbnail": {
+                        "url": "http://image.exacttarget.com/media/generated/heroImage/heroImage200x200.jpg",
+                        "width": 200,
+                        "height": 200
+                    },
+                    "small_crop": {
+                        "url": "http://image.exacttarget.com/media/generated/heroImage/heroImage110x62cropped.jpg",
+                        "width": 110,
+                        "height": 62
                     }
+                },
+                "campaigns": [
+                    61,
+                    102
                 ],
+                "publishedLocations": {
+                    "akamai": {
+                        "href": "http://image.exacttarget.com/lib/fec3167874670174/m/1/heroImage.jpg",
+                        "publishDate": "2014-02-15T00:00:00-06:00",
+                        "expirationDate": "2014-04-15T00:00:00-06:00"
+                    },
+                    "amazonS3": {
+                        "href": "http://s3.amazonaws.com/fec3167874670174/heroImage.jpg",
+                        "publishDate": "2014-02-15T00:00:00-06:00",
+                        "expirationDate": "2014-04-15T00:00:00-06:00"
+                    }
+                },
                 "customFields": {
                     "SKU": "1047191",
                     "Brand": "Columbia"
                 },
-                "fileName": "heroImage.jpg",
-                "sourcePath": "//etincrep03/1084683/heroImage.jpg",
-                "lensType": "",
-                "focalLength": "",
-                "cameraModel": "",
-                "iso": "",
-                "colorSpace": "",
-                "colorType": "",
-                "shutterSpeed": "",
-                "aperture": "",
-                "fileFormat": "JPG",
-                "fileSize": "7140",
-                "width": 199,
-                "height": 254
+                "fileProperties": {
+                    "fileName": "heroImage.jpg",
+                    "fileUrl": "http://image.exacttarget.com/media/originals/heroImage/heroImage.jpg",
+                    "sourcePath": "//etincrep03/1084683/heroImage.jpg",
+                    "fileFormat": "JPG",
+                    "fileSize": "7140",
+                    "width": 199,
+                    "height": 254,
+                    "lensType": "",
+                    "focalLength": "",
+                    "cameraModel": "",
+                    "iso": "",
+                    "colorSpace": "",
+                    "colorType": "",
+                    "shutterSpeed": "",
+                    "aperture": ""
+                }
             }
 
 ### Retrieve an Asset [GET]
@@ -110,23 +155,15 @@ A single Asset object.
 
             {
                 "id": 1,
-                "catalogId": 1084683,
-                "eid": 1084683,
-                "mid": 1084683,
+                "key": "heroImage",
                 "name": "Hero Image",
                 "description": "Image of a man wearing a jacket",
                 "category": {
                     "id": 328
                 },
                 "status": "Active",
-                "publishDate": "2014-02-15T00:00:00-06:00",
-                "expirationDate": "2014-04-15T00:00:00-06:00",
                 "locked": false,
-                "archived": false,
                 "favorite": true,
-                "campaigns": [
-                    61
-                ],
                 "customFields": {
                     "SKU": "1047191",
                     "Brand": "Columbia"
@@ -162,20 +199,39 @@ A collection of Asset objects.
                         "assetType": "image",
                         "classification": "file",
                         "version": 1,
+                        "key": "heroImage",
                         "name": "Hero Image",
                         "description": "Image of a man wearing a jacket",
-                        "owner": 1093028,
+                        "owner": {
+                            "Id": 1093028,
+                            "Email": "agillaspie@exacttarget.com",
+                            "Name": "Adam Gillaspie",
+                            "UserId": "cm-agillaspie"
+                        },
                         "createdDate": "2014-01-30T11:18:31-06:00",
-                        "createdBy": 1097912,
+                        "createdBy": {
+                            "Id": 1093028,
+                            "Email": "agillaspie@exacttarget.com",
+                            "Name": "Adam Gillaspie",
+                            "UserId": "cm-agillaspie"
+                        },
                         "modifiedDate": "2014-01-31T10:13:53-06:00",
-                        "modifiedBy": 1093028,
-                        "catalogId": 1084683,
-                        "eid": 1084683,
-                        "mid": 1084683,
+                        "modifiedBy": {
+                            "Id": 1097912,
+                            "Email": "contentmanagement@exacttarget.com",
+                            "Name": "Content Management User",
+                            "UserId": "cm-contentuser"
+                        },
+                        "enterpriseId": 1084683,
+                        "memberId": 1084683,
+                        "status": "Active",
+                        "locked": false,
+                        "archived": false,
+                        "favorite": true,
                         "category": {
                             "id": 328,
                             "name": "promo",
-                            "tree": "/agency/promo"
+                            "path": "/agency/promo"
                         },
                         "tags": [
                             "hero",
@@ -183,70 +239,119 @@ A collection of Asset objects.
                             "jacket",
                             "columbia"
                         ],
-                        "status": "Active",
-                        "publishDate": "2014-02-15T00:00:00-06:00",
-                        "expirationDate": "2014-04-15T00:00:00-06:00",
-                        "locked": false,
-                        "archived": false,
-                        "favorite": true,
-                        "channels": [
-                            "email",
-                            "site",
-                            "socialPages"
-                        ],
-                        "campaigns": [
-                            61
-                        ],
-                        "businessUnits": [
-                            1038710,
-                            1039012,
-                            1039113,
-                            1039039
-                        ],
-                        "publishedLocations": [
-                            {
-                                "name": "akamai",
-                                "href": "http://image.exacttarget.com/lib/fec3167874670174/m/1/heroImage.jpg"
+                        "channels": {
+                            "email": true,
+                            "mms": true,
+                            "print": false,
+                            "push": true,
+                            "site": true,
+                            "sms": false,
+                            "social": false,
+                            "web": false
+                        },
+                        "variations": {
+                            "original": {
+                                "url": "http://image.exacttarget.com/media/originals/heroImage/heroImage.jpg",
+                                "width": 734,
+                                "height": 546
                             },
-                            {
-                                "name": "amazonS3",
-                                "href": "http://s3.amazonaws.com/fec3167874670174/heroImage.jpg"
+                            "image_large": {
+                                "url": "http://image.exacttarget.com/media/generated/heroImage/heroImage1024x768.jpg",
+                                "width": 1024,
+                                "height": 768
+                            },
+                            "image_medium": {
+                                "url": "http://image.exacttarget.com/media/generated/heroImage/heroImage550x350.jpg",
+                                "width": 550,
+                                "height": 350
+                            },
+                            "image_thumbnail": {
+                                "url": "http://image.exacttarget.com/media/generated/heroImage/heroImage200x200.jpg",
+                                "width": 200,
+                                "height": 200
+                            },
+                            "small_crop": {
+                                "url": "http://image.exacttarget.com/media/generated/heroImage/heroImage110x62cropped.jpg",
+                                "width": 110,
+                                "height": 62
                             }
+                        },
+                        "campaigns": [
+                            61,
+                            102
                         ],
-                        "fileName": "heroImage.jpg",
-                        "sourcePath": "//etincrep03/1084683/heroImage.jpg",
-                        "lensType": "",
-                        "focalLength": "",
-                        "cameraModel": "",
-                        "iso": "",
-                        "colorSpace": "",
-                        "colorType": "",
-                        "shutterSpeed": "",
-                        "aperture": "",
-                        "fileFormat": "JPG",
-                        "fileSize": "7140",
-                        "width": 199,
-                        "height": 254
+                        "publishedLocations": {
+                            "akamai": {
+                                "href": "http://image.exacttarget.com/lib/fec3167874670174/m/1/heroImage.jpg",
+                                "publishDate": "2014-02-15T00:00:00-06:00",
+                                "expirationDate": "2014-04-15T00:00:00-06:00"
+                            },
+                            "amazonS3": {
+                                "href": "http://s3.amazonaws.com/fec3167874670174/heroImage.jpg",
+                                "publishDate": "2014-02-15T00:00:00-06:00",
+                                "expirationDate": "2014-04-15T00:00:00-06:00"
+                            }
+                        },
+                        "customFields": {
+                            "SKU": "1047191",
+                            "Brand": "Columbia"
+                        },
+                        "fileProperties": {
+                            "fileName": "heroImage.jpg",
+                            "fileUrl": "http://image.exacttarget.com/media/originals/heroImage/heroImage.jpg",
+                            "sourcePath": "//etincrep03/1084683/heroImage.jpg",
+                            "fileFormat": "JPG",
+                            "fileSize": "7140",
+                            "width": 199,
+                            "height": 254,
+                            "lensType": "",
+                            "focalLength": "",
+                            "cameraModel": "",
+                            "iso": "",
+                            "colorSpace": "",
+                            "colorType": "",
+                            "shutterSpeed": "",
+                            "aperture": ""
+                        }
                     },
                     {
                         "id": 3,
                         "assetType": "imagePlusText",
                         "classification": "content",
                         "version": 3,
+                        "key": "exampleImageAndContent",
                         "name": "Example Image & Text Content",
                         "description": "Hero image for our NYE mobile page",
-                        "owner": 1093028,
+                        "owner": {
+                            "Id": 1093028,
+                            "Email": "agillaspie@exacttarget.com",
+                            "Name": "Adam Gillaspie",
+                            "UserId": "cm-agillaspie"
+                        },
                         "createdDate": "2014-01-30T11:18:31-06:00",
-                        "createdBy": 1097912,
+                        "createdBy": {
+                            "Id": 1093028,
+                            "Email": "agillaspie@exacttarget.com",
+                            "Name": "Adam Gillaspie",
+                            "UserId": "cm-agillaspie"
+                        },
                         "modifiedDate": "2014-01-31T10:13:53-06:00",
-                        "modifiedBy": 1093028,
-                        "catalogId": 1084683,
-                        "eid": 1084683,
-                        "mid": 1039012,
+                        "modifiedBy": {
+                            "Id": 1097912,
+                            "Email": "contentmanagement@exacttarget.com",
+                            "Name": "Content Management User",
+                            "UserId": "cm-contentuser"
+                        },
+                        "enterpriseId": 1084683,
+                        "memberId": 1084683,
+                        "status": "Active",
+                        "locked": false,
+                        "archived": false,
+                        "favorite": true,
                         "category": {
                             "id": 319,
                             "name": "example",
-                            "tree": "/something/another/example"
+                            "path": "/something/another/example"
                         },
                         "tags": [
                             "mobile",
@@ -254,25 +359,23 @@ A collection of Asset objects.
                             "blue"
                         ],
                         "status": "Active",
-                        "publishDate": "2014-02-15T00:00:00-06:00",
-                        "expirationDate": "2014-04-15T00:00:00-06:00",
                         "locked": true,
                         "archived": false,
                         "favorite": false,
-                        "channels": [
-                            "email",
-                            "site",
-                            "mms"
-                        ],
+                        "channels": {
+                            "email": true,
+                            "mms": true,
+                            "print": false,
+                            "push": true,
+                            "site": true,
+                            "sms": false,
+                            "social": false,
+                            "web": false
+                        },
                         "campaigns": [
                             38,
                             57,
                             61
-                        ],
-                        "businessUnits": [
-                            1038710,
-                            1038711,
-                            1039012
                         ],
                         "customFields": {
                             "SKU": "1047191",
@@ -283,22 +386,53 @@ A collection of Asset objects.
                             "link": 2,
                             "image": 1
                         }
+                        "contentFields": {
+                            "bodyText": "Mister wayne, if you don't want to tell me exactly what you're doing, when i'm asked, i don't have to lie.",
+                            "imageLink": {
+                                "assetId": 20,
+                                "uri": "/assets/20"
+                            },
+                            "image": {
+                                "assetId": 1,
+                                "uri": "/assets/1"
+                            }
+                        },
+                        "content": "<table data-assetid=\"3\"><tr><td><a data-field=\"imageLink\" href=\"{{imageLink}}\" target=\"{{imageLink.target}}\" title=\"{{imageLink.title}}\"><img data-field=\"image\" src=\"{{image}}\" alt=\"{{image.alt}}\" width=\"{{image.width}}\" height=\"{{image.height}}\"></a></td></tr><tr><td><h2 data-field=\"bodyText\" style=\"font-size:22px; color:#4e8abe;\">{{bodyText}}</h2></td></tr></table>"
                     },
                     {
                         "id": 8,
                         "assetType": "article",
                         "classification": "content",
                         "version": 2,
+                        "key": "exampleBlogPost",
                         "name": "Example Blog Post",
                         "description": "Article about a squirrel who waterskis",
-                        "owner": 1093028,
+                        "owner": {
+                            "Id": 1093028,
+                            "Email": "agillaspie@exacttarget.com",
+                            "Name": "Adam Gillaspie",
+                            "UserId": "cm-agillaspie"
+                        },
                         "createdDate": "2014-01-30T11:18:31-06:00",
-                        "createdBy": 1097912,
+                        "createdBy": {
+                            "Id": 1093028,
+                            "Email": "agillaspie@exacttarget.com",
+                            "Name": "Adam Gillaspie",
+                            "UserId": "cm-agillaspie"
+                        },
                         "modifiedDate": "2014-01-31T10:13:53-06:00",
-                        "modifiedBy": 1093028,
-                        "catalogId": 1084683,
-                        "eid": 1084683,
-                        "mid": 1084683,
+                        "modifiedBy": {
+                            "Id": 1097912,
+                            "Email": "contentmanagement@exacttarget.com",
+                            "Name": "Content Management User",
+                            "UserId": "cm-contentuser"
+                        },
+                        "enterpriseId": 1084683,
+                        "memberId": 1084683,
+                        "status": "Active",
+                        "locked": false,
+                        "archived": false,
+                        "favorite": true,
                         "category": {
                             "id": 317,
                             "name": "another",
@@ -309,22 +443,22 @@ A collection of Asset objects.
                             "waterski"
                         ],
                         "status": "Active",
-                        "publishDate": "2014-02-15T00:00:00-06:00",
-                        "expirationDate": "2014-04-15T00:00:00-06:00",
                         "locked": true,
                         "archived": false,
                         "favorite": false,
-                        "channels": [
-                            "email",
-                            "site",
-                            "mms"
-                        ],
+                        "channels": {
+                            "email": true,
+                            "mms": false,
+                            "print": true,
+                            "push": true,
+                            "site": true,
+                            "sms": false,
+                            "social": true,
+                            "web": true
+                        },
                         "campaigns": [
                             38,
                             82
-                        ],
-                        "businessUnits": [
-                            1039012
                         ],
                         "customFields": {
                             "PublisherId": 118
@@ -334,11 +468,22 @@ A collection of Asset objects.
                             "body": "<p>we're going for a ride on the information super highway. we're going for a ride on the information super highway. your entrance was good, his was better. here she comes to wreck the day. we got no food we got no money and our pets heads are falling off! haaaaaaarry. i just heard about evans new position,good luck to you evan backstabber, i mean baxter. we got no food we got no money and our pets heads are falling off! haaaaaaarry. good morning, oh in case i don't see you, good afternoon, good evening and goodnight. it's because i'm green isn't it! we got no food we got no money and our pets heads are falling off! haaaaaaarry. i just heard about evans new position,good luck to you evan backstabber.</p><p> brain freeze. excuse me, i'd like to ass you a few questions. kinda hot in these rhinos. here she comes to wreck the day. good morning, oh in case i don't see you, good afternoon, good evening and goodnight. kinda hot in these rhinos. excuse me, i'd like to ass you a few questions. your entrance was good, his was better. your entrance was good, his was better. it's because i'm green isn't it! look at that, it's exactly three seconds before i honk your nose and pull your underwear over your head. look ma i'm road kill.</p>",
                             "summary": "We're going for a ride on the information super highway. we're going for a ride on the information super highway. your entrance was good, his was better. here she comes to wreck the day. we got no food we got no money and our pets heads are falling off! haaaaaaarry....",
                             "title": "A Talented Squirrel",
-                            "link": 4,
-                            "image": 6,
+                            "imageLink": {
+                                "assetId": 4,
+                                "uri": "/assets/4"
+                            },
+                            "image": {
+                                "assetId": 6,
+                                "uri": "/assets/6"
+                            }
+                            "link": {
+                                "assetId": 4,
+                                "uri": "/assets/4"
+                            },
                             "characterCount": 1239,
                             "wordCount": 231
-                        }
+                        },
+                        "content": "<table data-assetid=\"8\"><tr><td><a data-field=\"imageLink\" href=\"{{imageLink}}\" target=\"{{imageLink.target}}\" title=\"{{imageLink.title}}\"><img data-field=\"image\" src=\"{{image}}\" alt=\"{{image.alt}}\" width=\"{{image.width}}\" height=\"{{image.height}}\"></a></td></tr><tr><td><p data-field=\"summary\" style=\"font-size:14px; color:#333333;\">{{summary}}</p></td></tr></table>"
                     }
                 ]
             }
@@ -349,10 +494,8 @@ A collection of Asset objects.
     + Body
 
             {
-                "catalogId": 1084683,
-                "eid": 1084683,
-                "mid": 1084683,
                 "assetType": "article",
+                "key": "exampleBlogPost",
                 "name": "Example Blog Post",
                 "description": "Article about a squirrel who waterskis",
                 "category": {
@@ -367,9 +510,17 @@ A collection of Asset objects.
                     "body": "<p>we're going for a ride on the information super highway. we're going for a ride on the information super highway. your entrance was good, his was better. here she comes to wreck the day. we got no food we got no money and our pets heads are falling off! haaaaaaarry. i just heard about evans new position,good luck to you evan backstabber, i mean baxter. we got no food we got no money and our pets heads are falling off! haaaaaaarry. good morning, oh in case i don't see you, good afternoon, good evening and goodnight. it's because i'm green isn't it! we got no food we got no money and our pets heads are falling off! haaaaaaarry. i just heard about evans new position,good luck to you evan backstabber.</p><p> brain freeze. excuse me, i'd like to ass you a few questions. kinda hot in these rhinos. here she comes to wreck the day. good morning, oh in case i don't see you, good afternoon, good evening and goodnight. kinda hot in these rhinos. excuse me, i'd like to ass you a few questions. your entrance was good, his was better. your entrance was good, his was better. it's because i'm green isn't it! look at that, it's exactly three seconds before i honk your nose and pull your underwear over your head. look ma i'm road kill.</p>",
                     "summary": "We're going for a ride on the information super highway. we're going for a ride on the information super highway. your entrance was good, his was better. here she comes to wreck the day. we got no food we got no money and our pets heads are falling off! haaaaaaarry....",
                     "title": "A Talented Squirrel",
-                    "link": 4,
-                    "image": 6
-                }
+                    "imageLink": {
+                        "assetId": 4
+                    },
+                    "image": {
+                        "assetId": 6
+                    }
+                    "link": {
+                        "assetId": 4
+                    }
+                },
+                "content": "<table data-assetid=\"8\"><tr><td><a data-field=\"imageLink\" href=\"{{imageLink}}\" target=\"{{imageLink.target}}\" title=\"{{imageLink.title}}\"><img data-field=\"image\" src=\"{{image}}\" alt=\"{{image.alt}}\" width=\"{{image.width}}\" height=\"{{image.height}}\"></a></td></tr><tr><td><p data-field=\"summary\" style=\"font-size:14px; color:#333333;\">{{summary}}</p></td></tr></table>"
             }
 
 + Response 201 (application/json)
@@ -379,16 +530,35 @@ A collection of Asset objects.
             "assetType": "article",
             "classification": "content",
             "version": 2,
+            "key": "exampleBlogPost",
             "name": "Example Blog Post",
             "description": "Article about a squirrel who waterskis",
-            "owner": 1093028,
+            "owner": {
+                "Id": 1093028,
+                "Email": "agillaspie@exacttarget.com",
+                "Name": "Adam Gillaspie",
+                "UserId": "cm-agillaspie"
+            },
             "createdDate": "2014-01-30T11:18:31-06:00",
-            "createdBy": 1097912,
+            "createdBy": {
+                "Id": 1093028,
+                "Email": "agillaspie@exacttarget.com",
+                "Name": "Adam Gillaspie",
+                "UserId": "cm-agillaspie"
+            },
             "modifiedDate": "2014-01-31T10:13:53-06:00",
-            "modifiedBy": 1093028,
-            "catalogId": 1084683,
-            "eid": 1084683,
-            "mid": 1084683,
+            "modifiedBy": {
+                "Id": 1097912,
+                "Email": "contentmanagement@exacttarget.com",
+                "Name": "Content Management User",
+                "UserId": "cm-contentuser"
+            },
+            "enterpriseId": 1084683,
+            "memberId": 1084683,
+            "status": "Active",
+            "locked": false,
+            "archived": false,
+            "favorite": true,
             "category": {
                 "id": 317,
                 "name": "another",
@@ -399,22 +569,22 @@ A collection of Asset objects.
                 "waterski"
             ],
             "status": "Active",
-            "publishDate": "2014-02-15T00:00:00-06:00",
-            "expirationDate": "2014-04-15T00:00:00-06:00",
             "locked": true,
             "archived": false,
             "favorite": false,
-            "channels": [
-                "email",
-                "site",
-                "mms"
-            ],
+            "channels": {
+                "email": true,
+                "mms": false,
+                "print": true,
+                "push": true,
+                "site": true,
+                "sms": false,
+                "social": true,
+                "web": true
+            },
             "campaigns": [
                 38,
                 82
-            ],
-            "businessUnits": [
-                1039012
             ],
             "customFields": {
                 "PublisherId": 118
@@ -424,11 +594,22 @@ A collection of Asset objects.
                 "body": "<p>we're going for a ride on the information super highway. we're going for a ride on the information super highway. your entrance was good, his was better. here she comes to wreck the day. we got no food we got no money and our pets heads are falling off! haaaaaaarry. i just heard about evans new position,good luck to you evan backstabber, i mean baxter. we got no food we got no money and our pets heads are falling off! haaaaaaarry. good morning, oh in case i don't see you, good afternoon, good evening and goodnight. it's because i'm green isn't it! we got no food we got no money and our pets heads are falling off! haaaaaaarry. i just heard about evans new position,good luck to you evan backstabber.</p><p> brain freeze. excuse me, i'd like to ass you a few questions. kinda hot in these rhinos. here she comes to wreck the day. good morning, oh in case i don't see you, good afternoon, good evening and goodnight. kinda hot in these rhinos. excuse me, i'd like to ass you a few questions. your entrance was good, his was better. your entrance was good, his was better. it's because i'm green isn't it! look at that, it's exactly three seconds before i honk your nose and pull your underwear over your head. look ma i'm road kill.</p>",
                 "summary": "We're going for a ride on the information super highway. we're going for a ride on the information super highway. your entrance was good, his was better. here she comes to wreck the day. we got no food we got no money and our pets heads are falling off! haaaaaaarry....",
                 "title": "A Talented Squirrel",
-                "link": 4,
-                "image": 6,
+                "imageLink": {
+                    "assetId": 4,
+                    "uri": "/assets/4"
+                },
+                "image": {
+                    "assetId": 6,
+                    "uri": "/assets/6"
+                }
+                "link": {
+                    "assetId": 4,
+                    "uri": "/assets/4"
+                },
                 "characterCount": 1239,
                 "wordCount": 231
-            }
+            },
+            "content": "<table data-assetid=\"8\"><tr><td><a data-field=\"imageLink\" href=\"{{imageLink}}\" target=\"{{imageLink.target}}\" title=\"{{imageLink.title}}\"><img data-field=\"image\" src=\"{{image}}\" alt=\"{{image.alt}}\" width=\"{{image.width}}\" height=\"{{image.height}}\"></a></td></tr><tr><td><p data-field=\"summary\" style=\"font-size:14px; color:#333333;\">{{summary}}</p></td></tr></table>"
         }
 
 ### Retrieve All Assets [GET]
